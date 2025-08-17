@@ -4,7 +4,7 @@ import Home from "./pages/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { useState } from "react";
-import Login from "./components/login/login";
+import Login from "./components/login/Login";
 import Cart from "./pages/cart/Cart";
 import Placeorder from "./pages/placeorder/Placeorder";
 import Verify from "./pages/verify/Verify";
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
+      {showLogin &&  <Login setShowLogin={setShowLogin} />}
       <div className="app">
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
@@ -23,7 +23,7 @@ function App() {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/order" element={<Placeorder />}></Route>
           <Route path="/verify" element={<Verify />}></Route>
-          <Route path="/myOrders" element={<Myorders />}></Route>
+          <Route path="/myorders" element={<Myorders />}></Route>
         </Routes>
       </div>
       <Footer />
