@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { StoreContext } from "../../context/storeContext";
+import { useContext, useState } from "react";
+import { StoreContext } from "../../context/StoreContext.jsx";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
@@ -64,7 +64,7 @@ const Navbar = ({ setShowLogin }) => {
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="profile" />
             <ul className="nav-profile-dropdown">
-              <li onClick={() => navigate("/myOrders")}>
+              <li onClick={() => navigate("/myorders")}>
                 <img src={assets.bag_icon} alt="bag" />
                 <p>Orders</p>
               </li>

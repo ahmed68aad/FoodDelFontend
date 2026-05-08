@@ -4,18 +4,21 @@
   gap: 20px;
 }
 .explore-menu .explore-menu-text {
-  max-width: 60%;
+  max-width: 680px;
   color: #808080;
+  line-height: 1.5;
 }
 
 .explore-menu-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 30px;
   text-align: center;
   margin: 20px 0px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
 }
 
 .explore-menu-list::-webkit-scrollbar {
@@ -28,6 +31,7 @@
   cursor: pointer;
   border-radius: 50%;
   transition: 0.2s;
+  scroll-snap-align: start;
 }
 
 .explore-menu-list-item p {
@@ -52,6 +56,22 @@
 @media (max-width: 1050px) {
   .explore-menu .explore-menu-text {
     max-width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .explore-menu {
+    gap: 14px;
+  }
+  .explore-menu h1 {
+    font-size: 26px;
+  }
+  .explore-menu-list {
+    gap: 18px;
+    margin: 12px 0;
+  }
+  .explore-menu-list-item p {
     font-size: 14px;
   }
 }

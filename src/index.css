@@ -4,12 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: Outfit, Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  color: #262626;
+  background: #fffdfb;
 }
 
 a {
@@ -19,7 +21,35 @@ a {
 
 .app {
   width: 80%;
+  max-width: 1200px;
   margin: auto;
+}
+
+button,
+a,
+img {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 1050px) {
+  .app {
+    width: 88%;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    width: 92%;
+  }
 }
 
 @keyframes fadeIn {

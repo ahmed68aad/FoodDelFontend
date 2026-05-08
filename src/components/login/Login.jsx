@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext.jsx";
 import "./Login.css";
 import { assets } from "../../assets/assets";
 
@@ -27,13 +27,20 @@ const Login = ({ setShowLogin }) => {
     } else {
       newUrl += "/api/user/register";
     }
-    const response = await axios.post(newUrl, data);
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
-    } else {
-      alert(response.data.message);
+    try {
+      const response = await axios.post(newUrl, data);
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setShowLogin(false);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      alert(
+        error.response?.data?.message ||
+          "Unable to connect to the server. Make sure the backend is running on http://localhost:4000",
+      );
     }
   };
   return (

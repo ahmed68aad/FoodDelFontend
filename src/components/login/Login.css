@@ -1,15 +1,17 @@
 .login {
-  position: absolute;
+  position: fixed;
+  inset: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   background-color: #00000090;
   display: grid;
+  padding: 20px;
 }
 
 .login-container {
   place-self: center;
-  width: max(23vw, 330px);
+  width: min(100%, 380px);
   color: #808080;
   background-color: white;
   display: flex;
@@ -44,6 +46,7 @@
   border: 1px solid #c9c9c9;
   padding: 10px;
   border-radius: 4px;
+  font-size: 15px;
 }
 
 .login-container button {
@@ -70,4 +73,14 @@
   color: tomato;
   font-weight: 500;
   cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  .login-container {
+    padding: 22px;
+    gap: 18px;
+  }
+  .login-condition {
+    font-size: 12px;
+  }
 }

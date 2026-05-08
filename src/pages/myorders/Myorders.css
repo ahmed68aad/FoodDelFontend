@@ -18,6 +18,8 @@
   padding: 10px 20px;
   color: #454545;
   border: 1px solid tomato;
+  border-radius: 8px;
+  background: white;
 }
 
 .my-orders-order img {
@@ -42,13 +44,28 @@
   color: #454545;
 }
 
+.my-orders-empty {
+  color: #777;
+  padding: 28px 0;
+}
+
 @media (max-width: 900px) {
   .my-orders-order {
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 44px 1fr;
     row-gap: 5px;
     font-size: 12px;
+    gap: 12px;
+  }
+  .my-orders-order p,
+  .my-orders-order button {
+    grid-column: 2;
+  }
+  .my-orders-order img {
+    grid-row: span 5;
+    width: 38px;
   }
   .my-orders-order button {
-    font-size: 10px;
+    font-size: 12px;
+    padding: 10px;
   }
 }
