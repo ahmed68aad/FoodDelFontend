@@ -39,7 +39,7 @@ const Login = ({ setShowLogin }) => {
     } catch (error) {
       alert(
         error.response?.data?.message ||
-          "Unable to connect to the server. Make sure the backend is running on http://localhost:4000",
+          `Unable to connect to the server at ${url}`,
       );
     }
   };
